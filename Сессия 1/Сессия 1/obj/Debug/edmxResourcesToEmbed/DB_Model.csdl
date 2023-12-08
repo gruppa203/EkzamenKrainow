@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_KrainovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Cat_ID" />
+    </Key>
+    <Property Name="Cat_ID" Type="Int32" Nullable="false" />
+    <Property Name="Cat_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Entities" Relationship="Self.FK_Entities_Category" FromRole="Category" ToRole="Entities" />
+  </EntityType>
+  <EntityType Name="Deliverer">
+    <Key>
+      <PropertyRef Name="Del_ID" />
+    </Key>
+    <Property Name="Del_ID" Type="Int32" Nullable="false" />
+    <Property Name="Del_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Entities" Relationship="Self.FK_Entities_Deliverer" FromRole="Deliverer" ToRole="Entities" />
+  </EntityType>
+  <EntityType Name="Entities">
+    <Key>
+      <PropertyRef Name="Ent_ID" />
+    </Key>
+    <Property Name="Ent_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ent_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ent_Measures" Type="Int32" Nullable="false" />
+    <Property Name="Ent_Price" Type="Int32" Nullable="false" />
+    <Property Name="Ent_Max_Sale" Type="Int32" Nullable="false" />
+    <Property Name="Ent_Man" Type="Int32" Nullable="false" />
+    <Property Name="Ent_Del" Type="Int32" Nullable="false" />
+    <Property Name="Ent_Cat" Type="Int32" Nullable="false" />
+    <Property Name="Ent_True_Sale" Type="Single" Nullable="false" />
+    <Property Name="Ent_Warehouse" Type="Int32" Nullable="false" />
+    <Property Name="Ent_Desc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ent_Img" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Entities_Category" FromRole="Entities" ToRole="Category" />
+    <NavigationProperty Name="Deliverer" Relationship="Self.FK_Entities_Deliverer" FromRole="Entities" ToRole="Deliverer" />
+    <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Entities_Manufacturer" FromRole="Entities" ToRole="Manufacturer" />
+    <NavigationProperty Name="Measures" Relationship="Self.FK_Entities_Measures" FromRole="Entities" ToRole="Measures" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="Man_ID" />
+    </Key>
+    <Property Name="Man_ID" Type="Int32" Nullable="false" />
+    <Property Name="Man_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Entities" Relationship="Self.FK_Entities_Manufacturer" FromRole="Manufacturer" ToRole="Entities" />
+  </EntityType>
+  <EntityType Name="Measures">
+    <Key>
+      <PropertyRef Name="Measure_ID" />
+    </Key>
+    <Property Name="Measure_ID" Type="Int32" Nullable="false" />
+    <Property Name="Measure_Name" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Entities" Relationship="Self.FK_Entities_Measures" FromRole="Measures" ToRole="Entities" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Role_ID" />
+    </Key>
+    <Property Name="Role_ID" Type="Int32" Nullable="false" />
+    <Property Name="Role1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_Entities_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Cat_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Cat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entities_Deliverer">
+    <End Role="Deliverer" Type="Self.Deliverer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deliverer">
+        <PropertyRef Name="Del_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Del" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entities_Manufacturer">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="Man_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Man" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entities_Measures">
+    <End Role="Measures" Type="Self.Measures" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Measures">
+        <PropertyRef Name="Measure_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Measures" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Role_ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_KrainovEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Deliverer" EntityType="Self.Deliverer" />
+    <EntitySet Name="Entities" EntityType="Self.Entities" />
+    <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" />
+    <EntitySet Name="Measures" EntityType="Self.Measures" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK_Entities_Category" Association="Self.FK_Entities_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entities_Deliverer" Association="Self.FK_Entities_Deliverer">
+      <End Role="Deliverer" EntitySet="Deliverer" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entities_Manufacturer" Association="Self.FK_Entities_Manufacturer">
+      <End Role="Manufacturer" EntitySet="Manufacturer" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entities_Measures" Association="Self.FK_Entities_Measures">
+      <End Role="Measures" EntitySet="Measures" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

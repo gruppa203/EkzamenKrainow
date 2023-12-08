@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DB_KrainovModelContainer" CdmEntityContainer="DB_KrainovEntities">
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="DB_KrainovModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Cat_ID" ColumnName="Cat_ID" />
+          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deliverer">
+      <EntityTypeMapping TypeName="DB_KrainovModel.Deliverer">
+        <MappingFragment StoreEntitySet="Deliverer">
+          <ScalarProperty Name="Del_ID" ColumnName="Del_ID" />
+          <ScalarProperty Name="Del_Name" ColumnName="Del_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entities">
+      <EntityTypeMapping TypeName="DB_KrainovModel.Entities">
+        <MappingFragment StoreEntitySet="Entities">
+          <ScalarProperty Name="Ent_ID" ColumnName="Ent_ID" />
+          <ScalarProperty Name="Ent_Name" ColumnName="Ent_Name" />
+          <ScalarProperty Name="Ent_Measures" ColumnName="Ent_Measures" />
+          <ScalarProperty Name="Ent_Price" ColumnName="Ent_Price" />
+          <ScalarProperty Name="Ent_Max_Sale" ColumnName="Ent_Max_Sale" />
+          <ScalarProperty Name="Ent_Man" ColumnName="Ent_Man" />
+          <ScalarProperty Name="Ent_Del" ColumnName="Ent_Del" />
+          <ScalarProperty Name="Ent_Cat" ColumnName="Ent_Cat" />
+          <ScalarProperty Name="Ent_True_Sale" ColumnName="Ent_True_Sale" />
+          <ScalarProperty Name="Ent_Warehouse" ColumnName="Ent_Warehouse" />
+          <ScalarProperty Name="Ent_Desc" ColumnName="Ent_Desc" />
+          <ScalarProperty Name="Ent_Img" ColumnName="Ent_Img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturer">
+      <EntityTypeMapping TypeName="DB_KrainovModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+          <ScalarProperty Name="Man_Name" ColumnName="Man_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Measures">
+      <EntityTypeMapping TypeName="DB_KrainovModel.Measures">
+        <MappingFragment StoreEntitySet="Measures">
+          <ScalarProperty Name="Measure_ID" ColumnName="Measure_ID" />
+          <ScalarProperty Name="Measure_Name" ColumnName="Measure_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="DB_KrainovModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="Role1" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="DB_KrainovModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

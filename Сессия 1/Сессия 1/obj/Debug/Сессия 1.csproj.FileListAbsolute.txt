@@ -1,0 +1,27 @@
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\Сессия 1.exe.config
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\Сессия 1.exe
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\Сессия 1.pdb
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\EntityFramework.dll
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\EntityFramework.xml
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1.csproj.AssemblyReference.cache
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\MainWindow.g.cs
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Pages\Entities_Page.g.cs
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Pages\Login_Page.g.cs
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\App.g.cs
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1_Content.g.cs
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1_MarkupCompile.cache
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1_MarkupCompile.lref
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\App.baml
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\MainWindow.baml
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Pages\Entities_Page.baml
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Pages\Login_Page.baml
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1.g.resources
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия_1.Properties.Resources.resources
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1.csproj.GenerateResource.cache
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1.csproj.CoreCompileInputs.cache
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1.csproj.CopyComplete
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1.exe
+C:\Users\Преподаватель\Downloads\Krai\Сессия 1\Сессия 1\obj\Debug\Сессия 1.pdb

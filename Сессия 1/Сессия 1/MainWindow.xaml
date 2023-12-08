@@ -1,0 +1,20 @@
+﻿<Window x:Name="Main_Window" x:Class="Сессия_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Сессия_1"
+        mc:Ignorable="d"
+        Title="Канцелярия" MinHeight="450" MinWidth="800" Height="450" Width="800">
+    <Grid x:Name="Main_Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="Nav_Frame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Source="/Сессия 1;component/Pages/Login_Page.xaml" NavigationUIVisibility="Hidden" Content=""/>
+        <Label x:Name="Copyrights_Lbl" Content="Все права защищены 2020-2023" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Style="{StaticResource Lbl_Style}"/>
+        <Label x:Name="Header_Lbl" Content="Канцелярские товары для дома и офиса" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ResourceKey=Lbl_Style}"/>
+
+    </Grid>
+</Window>

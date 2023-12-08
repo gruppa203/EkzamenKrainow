@@ -1,0 +1,44 @@
+﻿<Page x:Class="Сессия_1.Pages.Entities_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Сессия_1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Entities_Page">
+
+    <Grid x:Name="Main_Grid" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Back_Btn" Content="Назад" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Style="{StaticResource Btn_Style}"/>
+        <DataGrid x:Name="Entities_DG" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource DG_Style}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Изображение" Width="auto"/>
+                <DataGridTextColumn Header="Наименование" Width="auto"/>
+                <DataGridTextColumn Header="Описание" Width="auto"/>
+                <DataGridTextColumn Header="Производитель" Width="auto"/>
+                <DataGridTextColumn Header="Стоимость" Width="auto"/>
+                <DataGridTextColumn Header="Действующая скидка" Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel x:Name="Ord_Stp" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Stretch" Orientation="Horizontal">
+            <Label x:Name="Price_Ord_Lbl" Content="Фильтр по цене:" VerticalAlignment="Center" Style="{StaticResource Lbl_Style}"/>
+            <ComboBox x:Name="Price_Ord_Cmb" Width="150" VerticalAlignment="Center" Style="{StaticResource Cmb_Style}" SelectedIndex="0">
+                <ComboBoxItem Content="Все диапазоны" Height="100" Width="100"/>
+                <ComboBoxItem Content="По возрастанию" Height="100" Width="100"/>
+                <ComboBoxItem Content="По Убыванию" Height="100" Width="100"/>
+            </ComboBox>
+            <Label x:Name="Price_Sale_Lbl" Content="Фильтр по скидке:" VerticalAlignment="Center" Style="{StaticResource Lbl_Style}"/>
+            <ComboBox x:Name="Sale_Ord_Cmb" Width="150" VerticalAlignment="Center" Style="{StaticResource Cmb_Style}" SelectedIndex="0">
+                <ComboBoxItem Content="Все диапазоны" Height="100" Width="100"/>
+                <ComboBoxItem Content="0-9,99%" Height="100" Width="100"/>
+                <ComboBoxItem Content="10-14,99%" Height="100" Width="100"/>
+                <ComboBoxItem Content="15% и более" Height="100" Width="100"/>
+            </ComboBox>
+        </StackPanel>
+
+    </Grid>
+</Page>

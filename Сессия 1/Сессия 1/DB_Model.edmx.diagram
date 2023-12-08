@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c6aaf277f0d44f5182bf17bdb7c5900f" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_KrainovModel.Category" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KrainovModel.Deliverer" Width="1.5" PointX="0.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KrainovModel.Entities" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KrainovModel.Manufacturer" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KrainovModel.Measures" Width="1.5" PointX="6.625" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KrainovModel.Role" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_KrainovModel.User" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DB_KrainovModel.FK_Entities_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KrainovModel.FK_Entities_Deliverer" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KrainovModel.FK_Entities_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KrainovModel.FK_Entities_Measures" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_KrainovModel.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

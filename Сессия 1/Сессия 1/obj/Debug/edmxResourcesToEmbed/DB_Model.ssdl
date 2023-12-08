@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DB_KrainovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Cat_ID" />
+    </Key>
+    <Property Name="Cat_ID" Type="int" Nullable="false" />
+    <Property Name="Cat_Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deliverer">
+    <Key>
+      <PropertyRef Name="Del_ID" />
+    </Key>
+    <Property Name="Del_ID" Type="int" Nullable="false" />
+    <Property Name="Del_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Entities">
+    <Key>
+      <PropertyRef Name="Ent_ID" />
+    </Key>
+    <Property Name="Ent_ID" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Ent_Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Ent_Measures" Type="int" Nullable="false" />
+    <Property Name="Ent_Price" Type="int" Nullable="false" />
+    <Property Name="Ent_Max_Sale" Type="int" Nullable="false" />
+    <Property Name="Ent_Man" Type="int" Nullable="false" />
+    <Property Name="Ent_Del" Type="int" Nullable="false" />
+    <Property Name="Ent_Cat" Type="int" Nullable="false" />
+    <Property Name="Ent_True_Sale" Type="real" Nullable="false" />
+    <Property Name="Ent_Warehouse" Type="int" Nullable="false" />
+    <Property Name="Ent_Desc" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Ent_Img" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="Man_ID" />
+    </Key>
+    <Property Name="Man_ID" Type="int" Nullable="false" />
+    <Property Name="Man_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Measures">
+    <Key>
+      <PropertyRef Name="Measure_ID" />
+    </Key>
+    <Property Name="Measure_ID" Type="int" Nullable="false" />
+    <Property Name="Measure_Name" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Role_ID" />
+    </Key>
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Entities_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Cat_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Cat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entities_Deliverer">
+    <End Role="Deliverer" Type="Self.Deliverer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deliverer">
+        <PropertyRef Name="Del_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Del" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entities_Manufacturer">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="Man_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Man" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Entities_Measures">
+    <End Role="Measures" Type="Self.Measures" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Entities" Type="Self.Entities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Measures">
+        <PropertyRef Name="Measure_ID" />
+      </Principal>
+      <Dependent Role="Entities">
+        <PropertyRef Name="Ent_Measures" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Role_ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище DB_KrainovModelContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deliverer" EntityType="Self.Deliverer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Entities" EntityType="Self.Entities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Measures" EntityType="Self.Measures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Entities_Category" Association="Self.FK_Entities_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entities_Deliverer" Association="Self.FK_Entities_Deliverer">
+      <End Role="Deliverer" EntitySet="Deliverer" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entities_Manufacturer" Association="Self.FK_Entities_Manufacturer">
+      <End Role="Manufacturer" EntitySet="Manufacturer" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Entities_Measures" Association="Self.FK_Entities_Measures">
+      <End Role="Measures" EntitySet="Measures" />
+      <End Role="Entities" EntitySet="Entities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
